@@ -6,7 +6,7 @@ from setuptools import setup
 
 setup(
     name='wirecloud-markdown-github',
-    version='1.0',
+    version='1.2',
     author='CoNWeT Lab',
     author_email='wirecloud@conwet.com',
     description='Set of markdown extensions for getting similar behaviour to GFM.',
