@@ -196,12 +196,14 @@ class HeaderIdGithubExtension(Extension):
         self.processor = HeaderIdTreeprocessor()
         self.processor.md = md
         self.processor.config = self.getConfigs()
-        if 'attr_list' in md.treeprocessors.keys():
-            # insert after attr_list treeprocessor
-            md.treeprocessors.add('headerid_github', self.processor, '>attr_list')
-        else:
+        try:
+            md.treeprocessors.get_index_for_name('attr_list')
+        except ValueError:
             # insert after 'prettify' treeprocessor.
             md.treeprocessors.add('headerid_github', self.processor, '>prettify')
+        else:
+            # insert after attr_list treeprocessor
+            md.treeprocessors.add('headerid_github', self.processor, '>attr_list')
 
     def reset(self):
         self.processor.IDs = set()

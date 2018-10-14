@@ -12,7 +12,7 @@ setup(
     description='Set of markdown extensions for getting similar behaviour to GFM.',
     url='https://github.com/conwetlab/markdown_github',
     packages=['markdown_github'],
-    install_requires=['markdown>=2.0',],
+    install_requires=['markdown>=3.0', 'pymdown-extensions'],
     classifiers=[
         'Development Status :: 4 - Beta',
         'Operating System :: OS Independent',
